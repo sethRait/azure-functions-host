@@ -86,16 +86,16 @@
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
   </ItemGroup>
 
-	<ItemGroup Condition="'$(Platform)'=='linux-x64'">
+	<ItemGroup Condition="'$(RuntimeIdentifier)'=='linux-x64'">
 		<PackageReference Include="ServerlessSecurity-linux64" Version="1.0.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(Platform)'=='win-x64'">
+	<ItemGroup Condition="'$(RuntimeIdentifier)'=='win-x64'">
 		<PackageReference Include="ServerlessSecurity-win64" Version="1.0.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(Platform)'=='win-x86'">
+	<ItemGroup Condition="'$(RuntimeIdentifier)'=='win-x86'">
 		<PackageReference Include="ServerlessSecurity-win86" Version="1.0.0" />
 	</ItemGroup>
-	<ItemGroup Condition="'$(Platform)'==''">
+	<ItemGroup Condition="'$(RuntimeIdentifier)'==''">
 		<PackageReference Include="ServerlessSecurity" Version="1.0.0" />
 	</ItemGroup>
 
