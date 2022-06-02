@@ -3,6 +3,7 @@
 
 using System;
 using System.Net.Http;
+using Az.ServerlessSecurity.Platform;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.Azure.WebJobs.Host.Config;
 using Microsoft.Azure.WebJobs.Host.Executors;
@@ -123,6 +124,10 @@ namespace Microsoft.Azure.WebJobs.Script.WebHost
                     services.TryAddSingleton<IJobHostMiddlewarePipeline, DefaultMiddlewarePipeline>();
                     services.TryAddEnumerable(ServiceDescriptor.Singleton<IJobHostHttpMiddleware, CustomHttpHeadersMiddleware>());
                     services.TryAddEnumerable(ServiceDescriptor.Singleton<IJobHostHttpMiddleware, HstsConfigurationMiddleware>());
+                    services.AddSingleton<Collector.CollectorBase, CollectorService>();
+                    services.AddSingleton<EnvironmentData.EnvironmentDataBase, EnvironmentService>();
+                    services.AddSingleton<IRpcServer, GrpcServer>();
+                    services.AddSingleton<IPluginMgr, PluginMgr>();
                     if (environment.IsLinuxConsumption())
                     {
                         services.AddSingleton<ICorsMiddlewareFactory, CorsMiddlewareFactory>();
