@@ -81,8 +81,8 @@
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="$(IdentityDependencyVersion)" />
     <PackageReference Include="Microsoft.Security.Utilities" Version="1.3.0" />
 	<PackageReference Include="PluginExample" Version="1.0.0" />
-	  <PackageReference Include="ServerlessSecurity" Version="1.0.0" />
-	  <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004">
+	<PackageReference Include="ServerlessSecurity$(RuntimeIdentifier)" Version="1.0.0" />
+	<PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004">
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="System.Net.NameResolution" Version="4.3.0" />
